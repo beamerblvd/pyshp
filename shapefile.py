@@ -494,6 +494,7 @@ class Reader:
                 continue
             elif typ == "N":
                 value = value.replace(b('\0'), b('')).strip()
+                value = value.replace(b('S*********'), b('')).strip()
                 value = value.replace(b('*'), b(''))  # QGIS NULL is all '*' chars
                 if value == b(''):
                     value = None
